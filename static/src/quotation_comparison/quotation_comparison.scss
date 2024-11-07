@@ -1,0 +1,76 @@
+.o_quotation_comparison {
+    padding: 2rem;
+
+    .container {
+        background-color: var(--gray-200);
+    }
+}
+
+.o_quotation_comparison td, th {
+    border: 1px solid var(--gray-400);
+    min-width: 120px;
+}
+
+.o_quotation_comparison table {
+    width: 100%;
+    text-align: center;
+
+    tr {
+        display: flex;
+        flex-flow: row;
+
+        th {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+    }
+}
+
+.o_quotation_comparison .container {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    // display: flex;
+    // justify-content: center;
+}
+
+
+.o_quotation_comparison .container {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    // display: flex;
+    // justify-content: center;
+}
+
+.o_quotation_comparison > div > table > thead > tr > th {
+    height: 120px;
+
+    tr {
+        height: 50%;
+    }
+}
+
+.o_quotation_header_subrow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 33%;
+
+    div {
+        border: 1px solid var(--gray-400);
+        background-color: var(--gray-200); // #392230;
+        border-bottom: 0;
+        padding: 2px;
+    }
+}
+
+.o_quotation_header_terms {
+    height: 33.33%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    div {
+        border-bottom: 0;
+        padding: 2px;
+    }
+}

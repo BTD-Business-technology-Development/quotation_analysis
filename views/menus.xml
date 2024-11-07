@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="quotation_comparison">
+      <field name="name">Quotation Comparison</field>
+      <field name="tag">quotation_analysis.quotation_comparison</field>
+    </record>
+
+    <menuitem name="Quotation Analysis" id="quotation_analysis.menu_root" groups="base.group_user"/>
+    <menuitem name="Dashboard" id="quotation_analysis.dashboard_menu" parent="quotation_analysis.menu_root" action="quotation_analysis.quotation_comparison" sequence="1"/>
+  </data>
+</odoo>

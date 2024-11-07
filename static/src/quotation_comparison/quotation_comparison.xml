@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="quotation_analysis.QuotationComparison">
+        <div class="o_action">
+            <Layout className="'o_quotation_comparison h-100'" display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                <div class="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Products
+                                </th>
+                                <t t-foreach="state.orders" t-as="order" t-key="order.id">
+                                    <th>
+                                        <div style="height: 33.33%">
+                                            <t t-out="order.partner_id.identifier"/>
+                                        </div>
+                                        <div class="o_quotation_header_terms">
+                                            <div>
+                                                <button class="btn btn-primary" t-on-click="selectPaymentMethods">
+                                                    Select payment Methods
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary" t-on-click="selectPaymentMethods">
+                                                    Select payment Methods
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary" t-on-click="selectPaymentMethods">
+                                                    Select payment Methods
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="o_quotation_header_subrow">
+                                            <div>Selection</div>
+                                            <div>Quantity</div>
+                                            <div>Price</div>
+                                            <div>Price in currency</div>
+                                            <div>Marca</div>
+                                            <div>Total</div>
+                                            <div>Total in currency</div>
+                                        </div>
+                                    </th>
+                                </t>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="products" t-as="product" t-key="product.id">
+                                <tr t-att-id="product.id">
+                                    <td><t t-esc="product.name"/></td>
+                                    <t t-foreach="state.orders" t-as="order" t-key="order.id">
+                                        <t t-set="line" t-value="getOrderLineByProduct(order, product.id)"/>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check" style="display: flex; justify-content: space-around;">
+                                                    <input
+                                                        class="form-check-input"
+                                                        type="checkbox"
+                                                        t-att-id="line.id"
+                                                        t-att-checked="state.productProviderSelected[line.product_id] === line"
+                                                        t-on-click="() => onCheckBoxSelection(line)"
+                                                    />
+                                                </div>
+                                            </td>
+                                            <td><t t-esc="line.qty"/></td>
+                                            <td><t t-esc="line.price_unit"/></td>
+                                            <td><t t-esc="line.price_in_currency"/></td>
+                                            <td><t t-esc="line.brand"/></td>
+                                            <td><t t-esc="line.total"/></td>
+                                            <td><t t-esc="line.total_in_currency"/></td>
+                                        </tr>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </Layout>
+        </div>
+    </t>
+
+</templates>
