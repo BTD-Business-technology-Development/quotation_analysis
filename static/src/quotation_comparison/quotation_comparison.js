@@ -155,7 +155,7 @@ class QuotationComparison extends Component {
         this.state.productProviderSelected[value.product_id] = value;
     }
 
-    async selectPaymentMethods() {
+    selectPaymentMethods = () => {
         // Example:
 
         // const result = await this.action.doAction({
@@ -172,6 +172,18 @@ class QuotationComparison extends Component {
         // });
 
         // return result;
+    }
+
+    selectPaymentTerms = () => {
+
+    }
+
+    selectDeliveryFlow = () => {
+
+    }
+
+    confirmComparison = () => {
+        console.log("I'm confirming the quotation flow")
     }
 }
 

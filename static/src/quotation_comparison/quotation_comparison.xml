@@ -4,6 +4,9 @@
     <t t-name="quotation_analysis.QuotationComparison">
         <div class="o_action">
             <Layout className="'o_quotation_comparison h-100'" display="{ controlPanel: { 'top-right' : false, 'bottom-right': false } }">
+                <t t-set-slot="control-panel-create-button">
+                    <button t-on-click="confirmComparison" type="button" class="btn btn-primary" title="confirm">Confirm Comparison</button>
+                </t>
                 <div class="container">
                     <table>
                         <thead>
@@ -18,18 +21,18 @@
                                         </div>
                                         <div class="o_quotation_header_terms">
                                             <div>
-                                                <button class="btn btn-primary" t-on-click="selectPaymentMethods">
-                                                    Select payment Methods
+                                                <button class="btn btn-primary" t-on-click="selectPaymentTerms">
+                                                    Payment Terms
                                                 </button>
                                             </div>
                                             <div>
                                                 <button class="btn btn-primary" t-on-click="selectPaymentMethods">
-                                                    Select payment Methods
+                                                    Payment methods
                                                 </button>
                                             </div>
                                             <div>
-                                                <button class="btn btn-primary" t-on-click="selectPaymentMethods">
-                                                    Select payment Methods
+                                                <button class="btn btn-primary" t-on-click="selectDeliveryFlow">
+                                                    Delivery Info
                                                 </button>
                                             </div>
                                         </div>
