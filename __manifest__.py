@@ -9,7 +9,7 @@
     "website": "https://btdsistemas.com",
     'application': True,
     'installable': True,
-    'depends': ['base', 'web', 'mail', 'crm'],
+    'depends': ['base', 'web', 'mail'],
 
     'data': [
         "views/menus.xml"

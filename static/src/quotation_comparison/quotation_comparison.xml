@@ -31,9 +31,9 @@
                                                 </button>
                                             </div>
                                             <div>
-                                                <button class="btn btn-primary" t-on-click="selectDeliveryFlow">
-                                                    Delivery Info
-                                                </button>
+                                                <span>
+                                                    <t t-out="order.delivery_rules"/>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="o_quotation_header_subrow">
@@ -41,7 +41,8 @@
                                             <div>Quantity</div>
                                             <div>Price</div>
                                             <div>Price in currency</div>
-                                            <div>Marca</div>
+                                            <div>Brand</div>
+                                            <div>Attributes</div>
                                             <div>Total</div>
                                             <div>Total in currency</div>
                                         </div>
@@ -71,6 +72,7 @@
                                             <td><t t-esc="line.price_unit"/></td>
                                             <td><t t-esc="line.price_in_currency"/></td>
                                             <td><t t-esc="line.brand"/></td>
+                                            <td><t t-esc="line.attributes"/></td>
                                             <td><t t-esc="line.total"/></td>
                                             <td><t t-esc="line.total_in_currency"/></td>
                                         </tr>
