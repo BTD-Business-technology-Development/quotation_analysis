@@ -1,4 +1,8 @@
+import logging
+
 from odoo import api, fields, models, _
+
+_logger = logging.getLogger(__name__)
 
 
 class QuotationRequest(models.Model):
@@ -12,7 +16,7 @@ class QuotationRequest(models.Model):
         ('cancel', 'Cancelled')
     ])
 
-    def get_quotation_orders(self):
+    def get_quotation_orders(self) -> list[dict]:
         # return [
         #     {
         #         "id": 1,
@@ -111,7 +115,7 @@ class QuotationRequest(models.Model):
 
         return []
 
-    def get_quotation_products(self):
+    def get_quotation_products(self) -> list[dict]:
         # return [
         #     {
         #         "id": 1,
@@ -132,3 +136,8 @@ class QuotationRequest(models.Model):
         # ];
 
         return []
+    
+    def process_order_lines(self, selected_lines: dict[dict]) -> None:
+        # _logger.info(selected_lines)
+        
+        pass

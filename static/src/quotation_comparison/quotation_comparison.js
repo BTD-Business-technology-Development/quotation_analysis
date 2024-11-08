@@ -82,8 +82,15 @@ class QuotationComparison extends Component {
 
     }
 
-    confirmComparison = () => {
+    confirmComparison = async () => {
         console.log("I'm confirming the quotation flow")
+
+        await this.orm.call(
+            "quotation.request",
+            "process_order_lines",
+            [0, this.state.productProviderSelected],
+            {}
+        );
     }
 }
 
