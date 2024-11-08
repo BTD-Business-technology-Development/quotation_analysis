@@ -11,7 +11,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>
+                                <th id="o_product_head">
                                     Products
                                 </th>
                                 <t t-foreach="state.orders" t-as="order" t-key="order.id">
@@ -27,7 +27,7 @@
                                             </div>
                                             <div>
                                                 <button class="btn btn-primary" t-on-click="selectPaymentMethods">
-                                                    Payment methods
+                                                    <t t-out="'BDV'"/>
                                                 </button>
                                             </div>
                                             <div>

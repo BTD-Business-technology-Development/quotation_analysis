@@ -34,6 +34,9 @@
     // justify-content: center;
 }
 
+.o_quotation_comparison #o_product_head {
+    max-width: 120px;;
+}
 
 .o_quotation_comparison .container {
     background-color: transparent;
@@ -45,6 +48,8 @@
 
 .o_quotation_comparison > div > table > thead > tr > th {
     height: 120px;
+    font-weight: 700;
+    padding: 0;
 
     tr {
         height: 50%;
